@@ -34,7 +34,7 @@ public class Map {
             if (count_speed_map < 40) {
                 count_speed_map += 0.25;
             }
-            System.out.println("SP_MAP = " + count_speed_map);
+//            System.out.println("SP_MAP = " + count_speed_map);
         }
 
 //       for (int i = 0; i <  2; i++) {
