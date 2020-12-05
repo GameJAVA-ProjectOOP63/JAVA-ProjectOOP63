@@ -54,8 +54,8 @@ public class Enemy {
 //            y = 0;
 //            count += 0.5;
 //        }
-        System.out.println("score " + g.score);
-        System.out.println(y + " y");
+//        System.out.println("score " + g.score);
+//        System.out.println(y + " y");
         if (y > 1000) {
             e.remove();
         }
