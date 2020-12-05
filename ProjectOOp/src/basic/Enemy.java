@@ -5,26 +5,27 @@
  */
 package basic;
 
+import static basic.Image.carzing;
+import static basic.RandEnemy.e;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.LinkedList;
-
 
 /**
  *
  * @author HP
  */
 public class Enemy {
-    game g ;
+
+    game g;
     private int speedy = 1;
     public float count = 1;
-    private int x, y = 0;
+    private static int x, y = 0;
     private LinkedList<Enemy> e = RandEnemy.getEnemyBounds();
 
     public Enemy(int x, int y) {
         this.x = x;
         this.y = y;
-        System.out.println(e.size());
     }
 
     public LinkedList<Enemy> getE() {
@@ -32,37 +33,36 @@ public class Enemy {
     }
 
     public void draw(Graphics2D g2d) {
-        g2d.setColor(Color.yellow);
-        g2d.fillRect(x, y, 32, 32);
+        g2d.drawImage(Image.carzing, x, y, 84, 170, null);
         y += 2;
-        if(g.score >  30){
-        y += 1;
+        //ให้ enermy เพิ่มความเร็วตามเวลาและความเร็ว
+        if (g.score > 30) {
+            y += 1;
         }
-        if(g.score >  60){
-        y += 2;
+        if (g.score > 60) {
+            y += 2;
         }
-        if(g.score >  100){
-        y += 4;
+        if (g.score > 100) {
+            y += 4;
         }
-        if(g.score >  150){
-        y += 6;
+        if (g.score > 150) {
+            y += 6;
         }
-        if(g.score >  250){
-        y += 8;
+        if (g.score > 250) {
+            y += 8;
         }
-//        if (y > 1015) {
-//            y = 0;
-//            count += 0.5;
-//        }
-//        System.out.println("score " + g.score);
+        System.out.println("score " + g.score);
 //        System.out.println(y + " y");
         if (y > 1000) {
+            System.out.println("------------");
+            System.out.println("remove enemy");
             e.remove();
+            System.out.println("evemy: " + e.size());
         }
     }
 
     public void update() {
 
     }
-    
+
 }
