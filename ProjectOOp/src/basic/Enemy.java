@@ -42,20 +42,20 @@ public class Enemy implements ActionListener {
         g2d.drawImage(Image.carzing, x, y, 84, 170, null);
         y += 3;
         //ให้ enermy เพิ่มความเร็วตามเวลาและความเร็ว
-        if (g.score > 40) {
-            y += 1;
+        if (g.score > 30) {
+            y += 5;
         }
-        else if (g.score > 70) {
-            y += 4;
+        else if (g.score > 60) {
+            y += 10;
         }
-        else if (g.score > 120) {
-            y += 6;
+        else if (g.score > 100) {
+            y += 15;
         }
-        else if (g.score > 200) {
-            y += 8;
+        else if (g.score > 160) {
+            y += 20;
         }
-        else if (g.score > 320) {
-            y += 11;
+        else if (g.score > 220) {
+            y += 100;
         }
         System.out.println("score " + g.score);
 //        System.out.println(y + " y");
