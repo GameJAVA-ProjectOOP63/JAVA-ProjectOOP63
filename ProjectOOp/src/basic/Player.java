@@ -31,23 +31,23 @@ public class Player {
         x+=speedx;
         y+=speedy;
         //การชนขอบ ออกจากขอบของจอ
-        if(x< 223){
-            x=223;
+        if(x< 158){
+            x=158;
         }
         if(y< 0){
             y=0;
         }
-        if(x>406){
-            x=406;
+        if(x>470){
+            x=470;
         }
-        if(y> 863){
-            y = 863;
+        if(y> 850){
+            y = 826;
         }
         
     }
     //วาดตัวละครผู้เล่น
     public void draw(Graphics2D g2d){
-        g2d.drawImage(Image.carzing, x, y, 70, 120 ,null);
+        g2d.drawImage(Image.kraba, x, y, 70, 140 ,null);
     }
     //กดปุ้มค้างไว้
     public void keyPressed(KeyEvent e){
@@ -57,28 +57,28 @@ public class Player {
             if(map.count_speed_map > 30){
                 speedx=5;
             }
-//            System.out.println(x);
-//            System.out.println(y);
+            System.out.println(x);
+            System.out.println(y);
         }
         if(key==KeyEvent.VK_LEFT){
             speedx=-3;
             if(map.count_speed_map > 30){
                 speedx=-5;
             }
-//            System.out.println(x);
-//            System.out.println(y);
+            System.out.println(x);
+            System.out.println(y);
         }
         if(key==KeyEvent.VK_UP){
             speedy=-3;
             if(map.count_speed_map > 30){
                 speedy=-5;
             }
-//            System.out.println(x);
-//            System.out.println(y);
+            System.out.println(x);
+            System.out.println(y);
         }
         if(key==KeyEvent.VK_DOWN){
-//            System.out.println(x);
-//            System.out.println(y);
+            System.out.println(x);
+            System.out.println(y);
             speedy=3;
             if(map.count_speed_map > 30){
                 speedy=5;
