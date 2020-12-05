@@ -46,7 +46,7 @@ public class game extends JPanel implements ActionListener {
     }
     public void addScore(){
         if (count_score % 100 == 0){
-            score += 1;
+            score += 2;
 //            System.out.println(score);
         }
     }
