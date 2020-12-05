@@ -13,13 +13,17 @@ import java.util.LinkedList;
  * @author HP
  */
 public class RandEnemy {
+
     private int Probability = 1200;
     static LinkedList<Enemy> e = new LinkedList<>();
     Enemy enemy;
     public static int s;
-    public RandEnemy(){
-         s = e.size();
+    int stop2car;
+
+    public RandEnemy() {
+        s = e.size();
     }
+
     //วาดenemyทีละหลายๆตัว
     public void draw(Graphics2D g2d) {
         RandomEnemy();
@@ -29,65 +33,68 @@ public class RandEnemy {
         }
     }
 
-    public void addEnemy(Enemy enemy){
-        
-        
-        if(e.size() < 10){
-            System.out.println("add");
+    public void addEnemy(Enemy enemy) {
+
+        if (e.size() < 10) {
+            System.out.println("------------");
+            System.out.println("add enemy ");
             e.add(enemy);
-        }
-        else {
-            System.out.println("remove");
-            e.remove(enemy);
+            System.out.println("evemy: " + e.size());
         }
     }
-    public void removeEnemy(Enemy enemy){
-        e.remove(enemy);
-    }
+
+//    public void removeEnemy(Enemy enemy) {
+//        
+//    }
+
     //hit box ของ enemy แต่ละตัว
-    public static LinkedList<Enemy> getEnemyBounds(){
+    public static LinkedList<Enemy> getEnemyBounds() {
         return e;
     }
-    
-    private void RandomEnemy(){
-        int num = (int) Math.floor(Math.random()*Probability);
+
+    private void RandomEnemy() {
+        int num = (int) Math.floor(Math.random() * Probability);
         //x != 223 , != 406
         //224 269 314 359 404
-        if(num==0){
-            addEnemy(new Enemy(224,0));
+        if (num == 0 && stop2car != 0) {
+            addEnemy(new Enemy(168, -150));
+            stop2car = 0;
+            System.out.println(num);
         }
-        if(num==10){
-            addEnemy(new Enemy(404,0));
+        if (num == 100 && stop2car != 100) {
+            addEnemy(new Enemy(368, -100));
+            stop2car = 100;
+            System.out.println(num);
         }
-        if(num==20){
-            addEnemy(new Enemy(269,0));
+        if (num == 200 && stop2car != 200) {
+            addEnemy(new Enemy(268, -150));
+            stop2car = 200;
+            System.out.println(num);
         }
-        if(num==30){
-            addEnemy(new Enemy(314,0));
+        if (num == 300 && stop2car != 300) {
+            addEnemy(new Enemy(168, -100));
+            stop2car = 300;
+            System.out.println(num);
         }
-        if(num==40){
-            addEnemy(new Enemy(359,0));
+        if (num == 500 && stop2car != 500) {
+            addEnemy(new Enemy(368, -150));
+            stop2car = 500;
+            System.out.println(num);
         }
-        if(num==50){
-            addEnemy(new Enemy(314,0));
+        if (num == 600 && stop2car != 600) {
+            addEnemy(new Enemy(450, -150));
+            stop2car = 900;
+            System.out.println(num);
         }
-        if(num==60){
-            addEnemy(new Enemy(269,0));
+        if (num == 700 && stop2car != 700) {
+            addEnemy(new Enemy(268, -100));
+            stop2car = 700;
+            System.out.println(num);
         }
-        if(num==70){
-            addEnemy(new Enemy(404,0));
-        }
-        if(num==80){
-            addEnemy(new Enemy(359,0));
-        }
-        if(num==90){
-            addEnemy(new Enemy(314,0));
-        }
-        if(num==100){
-            addEnemy(new Enemy(269,0));
-        }
-        if(num==110){
-            addEnemy(new Enemy(404,0));
+        if (num == 900 && stop2car != 900) {
+            addEnemy(new Enemy(450, -100));
+            stop2car = 900;
+            System.out.println(num);
         }
 //        System.out.println(num);
     }
