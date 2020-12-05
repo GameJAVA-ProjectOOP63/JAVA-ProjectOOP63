@@ -11,6 +11,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
+import java.util.LinkedList;
 
 public class Player {
     Map map;
@@ -23,6 +24,7 @@ public class Player {
         this.x= x;
         this.y= y;
     }
+        private LinkedList<Enemy> e = RandEnemy.getEnemyBounds();
     public Player(){
         map = new Map(0);
     }
@@ -43,6 +45,7 @@ public class Player {
         if(y> 826){
             y = 826;
         }
+        hit();
         
     }
     //วาดตัวละครผู้เล่น
@@ -53,25 +56,25 @@ public class Player {
     public void keyPressed(KeyEvent e){
         int key=e.getKeyCode();
         if(key==KeyEvent.VK_RIGHT){
-            speedx=5;
+            speedx=6;
 //            System.out.println(x);
 //            System.out.println(y);
         }
         if(key==KeyEvent.VK_LEFT){
-            speedx=-5;
+            speedx=-6;
 //            System.out.println(x);
 //            System.out.println(y);
         }
         if(key==KeyEvent.VK_UP){
-            speedy=-5;
+            speedy=-6;
 //            System.out.println(x);
 //            System.out.println(y);
         }
         if(key==KeyEvent.VK_DOWN){
 //            System.out.println(x);
 //            System.out.println(y);
-            speedy=5;
-        }
+            speedy=6;
+;        }
     }
     public void keyReleased(KeyEvent e){
         int key=e.getKeyCode();
@@ -89,5 +92,16 @@ public class Player {
         }
     }
 
-    
+ //กำหนดhitbox
+    public Rectangle getBounds() {
+        return new Rectangle(x, y , 70, 140);
+    }
+
+    //เช็คการชนPlayerกับEnemy
+    public void hit() {
+        for (int i = 0; i < e.size(); i++) {
+            if (getBounds().intersects(e.get(i).getBounds())) {
+                e.remove(i);       }
+        }
+    }   
 }
