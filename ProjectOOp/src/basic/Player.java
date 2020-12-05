@@ -94,7 +94,7 @@ public class Player {
 
  //กำหนดhitbox
     public Rectangle getBounds() {
-        return new Rectangle(x, y , 70, 140);
+        return new Rectangle(x+20, y +20, 70-40, 140);
     }
 
     //เช็คการชนPlayerกับEnemy
