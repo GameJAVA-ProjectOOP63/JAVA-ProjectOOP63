@@ -53,36 +53,24 @@ public class Player {
     public void keyPressed(KeyEvent e){
         int key=e.getKeyCode();
         if(key==KeyEvent.VK_RIGHT){
-            speedx=3;
-            if(map.count_speed_map > 30){
-                speedx=5;
-            }
+            speedx=5;
 //            System.out.println(x);
 //            System.out.println(y);
         }
         if(key==KeyEvent.VK_LEFT){
-            speedx=-3;
-            if(map.count_speed_map > 30){
-                speedx=-5;
-            }
+            speedx=-5;
 //            System.out.println(x);
 //            System.out.println(y);
         }
         if(key==KeyEvent.VK_UP){
-            speedy=-3;
-            if(map.count_speed_map > 30){
-                speedy=-5;
-            }
+            speedy=-5;
 //            System.out.println(x);
 //            System.out.println(y);
         }
         if(key==KeyEvent.VK_DOWN){
 //            System.out.println(x);
 //            System.out.println(y);
-            speedy=3;
-            if(map.count_speed_map > 30){
-                speedy=5;
-            }
+            speedy=5;
         }
     }
     public void keyReleased(KeyEvent e){
