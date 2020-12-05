@@ -32,7 +32,7 @@ public class Map {
         if (y > 1015) {
             y = 0;
             if (count_speed_map < 35) {
-                count_speed_map += 0.50;
+                count_speed_map += 0.5;
             }
 //            System.out.println("SP_MAP = " + count_speed_map);
         }
