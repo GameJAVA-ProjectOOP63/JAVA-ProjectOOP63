@@ -6,6 +6,7 @@
 package basic;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
@@ -46,7 +47,7 @@ public class game extends JPanel implements ActionListener {
     }
     public void addScore(){
         if (count_score % 100 == 0){
-            score += 2;
+            score += 1;
 //            System.out.println(score);
         }
     }
@@ -61,6 +62,10 @@ public class game extends JPanel implements ActionListener {
         Map.draw(g2d);//วาดmap
         Player.draw(g2d);
         rand.draw(g2d);
+        g2d.setColor(Color.white);
+        g2d.setFont(new Font("TimesRoman", Font.PLAIN, 30)); 
+        g2d.drawString("Score : " + score, 540, 50);
+        
     }
 
     @Override
