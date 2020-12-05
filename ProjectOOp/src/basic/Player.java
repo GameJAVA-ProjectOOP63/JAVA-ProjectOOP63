@@ -34,13 +34,13 @@ public class Player {
         if(x< 158){
             x=158;
         }
-        if(y< 0){
-            y=0;
+        if(y< 10){
+            y=10;
         }
         if(x>470){
             x=470;
         }
-        if(y> 850){
+        if(y> 826){
             y = 826;
         }
         
@@ -57,28 +57,28 @@ public class Player {
             if(map.count_speed_map > 30){
                 speedx=5;
             }
-            System.out.println(x);
-            System.out.println(y);
+//            System.out.println(x);
+//            System.out.println(y);
         }
         if(key==KeyEvent.VK_LEFT){
             speedx=-3;
             if(map.count_speed_map > 30){
                 speedx=-5;
             }
-            System.out.println(x);
-            System.out.println(y);
+//            System.out.println(x);
+//            System.out.println(y);
         }
         if(key==KeyEvent.VK_UP){
             speedy=-3;
             if(map.count_speed_map > 30){
                 speedy=-5;
             }
-            System.out.println(x);
-            System.out.println(y);
+//            System.out.println(x);
+//            System.out.println(y);
         }
         if(key==KeyEvent.VK_DOWN){
-            System.out.println(x);
-            System.out.println(y);
+//            System.out.println(x);
+//            System.out.println(y);
             speedy=3;
             if(map.count_speed_map > 30){
                 speedy=5;
