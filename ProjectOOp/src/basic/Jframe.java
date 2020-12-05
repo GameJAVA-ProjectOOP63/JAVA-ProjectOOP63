@@ -16,7 +16,7 @@ public class Jframe extends JFrame {
     public Jframe(){
         JFrame window = new JFrame("Kraba Zing");
         
-        window.setSize(800, 1000);
+        window.setSize(700, 1000);
         window.setResizable(false);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setLocationRelativeTo(null);
