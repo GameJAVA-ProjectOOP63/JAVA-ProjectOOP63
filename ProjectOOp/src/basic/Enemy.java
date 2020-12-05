@@ -10,23 +10,28 @@ import static basic.RandEnemy.e;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.LinkedList;
+import javax.swing.Timer;
 
 /**
  *
  * @author HP
  */
-public class Enemy {
-
+public class Enemy implements ActionListener {
+    Timer loop;
     game g;
     private int speedy = 1;
     public float count = 1;
-    private static int x, y = 0;
+    private int x,y = 0;
     private LinkedList<Enemy> e = RandEnemy.getEnemyBounds();
 
     public Enemy(int x, int y) {
         this.x = x;
         this.y = y;
+        loop = new Timer(100, (ActionListener) this);
+        loop.start();
     }
 
     public LinkedList<Enemy> getE() {
@@ -35,22 +40,22 @@ public class Enemy {
 
     public void draw(Graphics2D g2d) {
         g2d.drawImage(Image.carzing, x, y, 84, 170, null);
-        y += 2;
+        y += 3;
         //ให้ enermy เพิ่มความเร็วตามเวลาและความเร็ว
-        if (g.score > 30) {
+        if (g.score > 40) {
             y += 1;
         }
-        if (g.score > 60) {
-            y += 2;
-        }
-        if (g.score > 100) {
+        else if (g.score > 70) {
             y += 4;
         }
-        if (g.score > 150) {
+        else if (g.score > 120) {
             y += 6;
         }
-        if (g.score > 250) {
+        else if (g.score > 200) {
             y += 8;
+        }
+        else if (g.score > 320) {
+            y += 11;
         }
         System.out.println("score " + g.score);
 //        System.out.println(y + " y");
@@ -61,13 +66,18 @@ public class Enemy {
             System.out.println("evemy: " + e.size());
         }
     }
-    //กำหนดhitbox
-    public Rectangle getBounds() {
-        return new Rectangle(x, y, 30, 30);
-    }
 
     public void update() {
 
+    }
+    //กำหนดhitbox
+    public Rectangle getBounds() {
+        return new Rectangle(x, y, 84, 170);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        
     }
 
 }
