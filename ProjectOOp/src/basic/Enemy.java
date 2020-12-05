@@ -79,5 +79,4 @@ public class Enemy implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         
     }
-
 }
