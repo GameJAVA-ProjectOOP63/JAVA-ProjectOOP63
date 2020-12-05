@@ -16,12 +16,14 @@ public class Image {
 
     public static BufferedImage map;
     public static BufferedImage carzing;
+    public static BufferedImage kraba;
     
     public Image(){
         try {
 
             map = ImageIO.read(getClass().getResource("/Img/street.png"));
             carzing = ImageIO.read(getClass().getResource("/Img/carzing.png"));
+            kraba = ImageIO.read(getClass().getResource("/Img/Kraba.png"));
             
         } catch (Exception ex) {
             ex.printStackTrace();
