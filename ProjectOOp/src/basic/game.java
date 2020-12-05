@@ -36,7 +36,7 @@ public class game extends JPanel implements ActionListener {
         rand = new RandEnemy();
         loop = new Timer(10, this);
         loop.start();
-        Player = new Player(width / 2, height);
+        Player = new Player((width / 2)-35, height);
         Enemy = new Enemy(350, 200);
         addKeyListener(new Keyinput(Player));
         image = new Image();
