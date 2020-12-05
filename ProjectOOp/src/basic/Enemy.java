@@ -9,6 +9,7 @@ import static basic.Image.carzing;
 import static basic.RandEnemy.e;
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.util.LinkedList;
 
 /**
@@ -59,6 +60,10 @@ public class Enemy {
             e.remove();
             System.out.println("evemy: " + e.size());
         }
+    }
+    //กำหนดhitbox
+    public Rectangle getBounds() {
+        return new Rectangle(x, y, 30, 30);
     }
 
     public void update() {
