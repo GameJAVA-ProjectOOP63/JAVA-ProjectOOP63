@@ -15,9 +15,9 @@ import java.util.LinkedList;
 public class RandEnemy {
 
     game g;
+    Enemy enemy;
     private int Probability = 1200;
     static LinkedList<Enemy> e = new LinkedList<>();
-    Enemy enemy;
     public static int s;
     int stop2car;
 

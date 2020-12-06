@@ -6,6 +6,8 @@
 package basic;
 import java.awt.BorderLayout;
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 
 /**
@@ -13,6 +15,7 @@ import javax.swing.JFrame;
  * @author HP
  */
 public class Jframe extends JFrame {
+    Player Player;
     public Jframe(){
         JFrame window = new JFrame("Kraba Zing");
         
@@ -26,4 +29,5 @@ public class Jframe extends JFrame {
         
         window.setVisible(true);
     }
+
 }

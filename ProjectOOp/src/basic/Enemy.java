@@ -25,7 +25,7 @@ public class Enemy implements ActionListener {
     private int speedy = 1;
     public float count = 1;
     private int x,y = 0;
-    private LinkedList<Enemy> e = RandEnemy.getEnemyBounds();
+    LinkedList<Enemy> e = RandEnemy.getEnemyBounds();
 
     public Enemy(int x, int y) {
         this.x = x;
@@ -80,4 +80,37 @@ public class Enemy implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         
     }
+
+    public int getSpeedy() {
+        return speedy;
+    }
+
+    public void setSpeedy(int speedy) {
+        this.speedy = speedy;
+    }
+
+    public float getCount() {
+        return count;
+    }
+
+    public void setCount(float count) {
+        this.count = count;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+    
 }

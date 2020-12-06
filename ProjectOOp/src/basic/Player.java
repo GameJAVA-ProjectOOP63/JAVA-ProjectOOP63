@@ -11,17 +11,20 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.util.LinkedList;
+import javax.swing.JFrame;
 
 public class Player {
 
+    game game;
     Map map;
+    Enemy Enemy;
+    RandEnemy RandEnemy;
+    public static int life = 3;
     private int x;
     private int y;
     //กำหนดความเร็ซในการเคลื่อนที่ของผู้เล่นตลอดการทำงาน
     private int speedx = 0;
     private int speedy = 0;
-
-    public static int life = 3;
 
     public Player(int x, int y) {
         this.x = x;
@@ -66,10 +69,7 @@ public class Player {
             g2d.drawImage(Image.life2, 600, 65, 35, 35, null);
         } else if (life == 1) {
             g2d.drawImage(Image.life1, 550, 60, 45, 45, null);
-        } else if (life == 0) {
-
         }
-        //รอใส่หน้าจบเกม
 
     }
 
@@ -97,6 +97,28 @@ public class Player {
             speedy = 6;
             ;
         }
+        if (life <= 0) {
+            if (key == KeyEvent.VK_SPACE) {
+                game.score = 0;
+                game.count_score = 0;
+                this.life = 3;
+                this.speedx = 0;
+                this.speedy = 0;
+                this.x = (700/2)- 35;
+                this.y = 1000;
+                Enemy.setSpeedy(1);
+                Enemy.setCount(1);
+                Enemy.setX(0);
+                Enemy.setY(0);
+                Enemy.e.clear();
+                Enemy = new Enemy(350, 200);
+                RandEnemy.stop2car = 0;
+                RandEnemy.s = 0;
+                Jframe jframe = new Jframe();
+                
+
+}
+}
     }
 
     public void keyReleased(KeyEvent e) {
@@ -132,4 +154,5 @@ public class Player {
             }
         }
     }
+
 }
