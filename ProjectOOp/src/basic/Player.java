@@ -20,6 +20,8 @@ public class Player {
     //กำหนดความเร็ซในการเคลื่อนที่ของผู้เล่นตลอดการทำงาน
     private int speedx = 0;
     private int speedy = 0;
+    
+    public static int life = 3;
 
     public Player(int x, int y) {
         this.x = x;
@@ -55,6 +57,8 @@ public class Player {
     //วาดตัวละครผู้เล่น
     public void draw(Graphics2D g2d) {
         g2d.drawImage(Image.kraba, x, y, 70, 140, null);
+//        g2d.drawImage(Image.kraba, x, y, 70, 140, null);
+        
     }
 
     //กดปุ้มค้างไว้
@@ -112,6 +116,17 @@ public class Player {
                 System.out.println("remove enemy");
                 e.remove(i);
                 System.out.println("evemy: " + e.size());
+                
+                life -= 1;
+                if(life == 2){
+                    
+                }
+                else if(life == 1){
+                    
+                }
+                else if(life == 0){
+                    
+                }
             }
         }
     }

@@ -17,6 +17,9 @@ public class Image {
     public static BufferedImage map;
     public static BufferedImage carzing;
     public static BufferedImage kraba;
+    public static BufferedImage life1;
+    public static BufferedImage life2;
+    public static BufferedImage life3;
     
     public Image(){
         try {
@@ -24,6 +27,9 @@ public class Image {
             map = ImageIO.read(getClass().getResource("/Img/street.png"));
             carzing = ImageIO.read(getClass().getResource("/Img/carzing.png"));
             kraba = ImageIO.read(getClass().getResource("/Img/Kraba.png"));
+            life1 = ImageIO.read(getClass().getResource("/engine/Kraba.png"));
+//            life2 = ImageIO.read(getClass().getResource("/shock/Kraba.png"));
+//            life3 = ImageIO.read(getClass().getResource("/wheel/Kraba.png"));
             
         } catch (Exception ex) {
             ex.printStackTrace();

@@ -84,9 +84,8 @@ public class RandEnemy {
             addEnemy(new Enemy(450, -120));
             stop2car = 900;
             System.out.println(num);
-        } //for score > 40
+        } //for score > 30
         else if (g.score >= 30) {
-            System.out.println("score > 30");
             if (num == 50 && stop2car != 50) {
                 addEnemy(new Enemy(168, -220));
                 stop2car = 50;

@@ -5,6 +5,7 @@
  */
 package basic;
 
+import static basic.Image.life1;
 import java.awt.Graphics2D;
 
 /**
@@ -39,6 +40,7 @@ public class Map {
 
 //       for (int i = 0; i <  2; i++) {
         g2d.drawImage(Image.map, 0, y - 1000, 700, 2000, null);//วาดmap
+        g2d.drawImage(Image.life1, 0, y - 1000, 700, 2000, null);
 //           System.out.println(count);
 
 //           System.out.println(i);
