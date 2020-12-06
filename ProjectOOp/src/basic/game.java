@@ -68,7 +68,7 @@ public class game extends JPanel implements ActionListener {
             rand.draw(g2d);
             g2d.setColor(Color.white);
             g2d.setFont(new Font("TimesRoman", Font.PLAIN, 30));
-            g2d.drawString("Score : " + score, 540, 50);
+            g2d.drawString("score " + score, 542, 50);
         } else {
             g2d.setColor(Color.white);
             g2d.setFont(new Font("TimesRoman", Font.PLAIN, 70));

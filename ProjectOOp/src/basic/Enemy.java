@@ -64,7 +64,7 @@ public class Enemy implements ActionListener {
             System.out.println("------------");
             System.out.println("remove enemy");
             e.remove();
-            System.out.println("evemy: " + e.size());
+            System.out.println("enemy: " + e.size());
         }
     }
 

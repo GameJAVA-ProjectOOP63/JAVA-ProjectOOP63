@@ -141,7 +141,7 @@ public class Player {
                 System.out.println("------------");
                 System.out.println("remove enemy");
                 e.remove(i);
-                System.out.println("evemy: " + e.size());
+                System.out.println("enemy: " + e.size());
                 life -= 1;
             }
         }
