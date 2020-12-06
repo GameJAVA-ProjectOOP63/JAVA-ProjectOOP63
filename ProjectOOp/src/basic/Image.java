@@ -17,9 +17,9 @@ public class Image {
     public static BufferedImage map, map_end;
     public static BufferedImage carzing;
     public static BufferedImage kraba;
-    public static BufferedImage life1;
-    public static BufferedImage life2;
-    public static BufferedImage life3;
+    public static BufferedImage life1, life1Red;
+    public static BufferedImage life2,life2Red;
+    public static BufferedImage life3,life3Red;
 
     public Image() {
         try {
@@ -31,6 +31,9 @@ public class Image {
             life1 = ImageIO.read(getClass().getResource("/Img/engine.png"));
             life2 = ImageIO.read(getClass().getResource("/Img/shock.png"));
             life3 = ImageIO.read(getClass().getResource("/Img/wheel.png"));
+            life1Red = ImageIO.read(getClass().getResource("/Img/engine_red.png"));
+            life2Red = ImageIO.read(getClass().getResource("/Img/shock_red.png"));
+            life3Red = ImageIO.read(getClass().getResource("/Img/wheel_red.png"));
 
         } catch (Exception ex) {
         }

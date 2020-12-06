@@ -58,7 +58,7 @@ public class Enemy implements ActionListener {
             y += 100;
         }
 //        System.out.println("score " + g.score);
-//        System.out.println(y + " y");
+
         //หากเกินหน้าจอ เอาออกจาก list
         if (y > 1000) {
             System.out.println("------------");

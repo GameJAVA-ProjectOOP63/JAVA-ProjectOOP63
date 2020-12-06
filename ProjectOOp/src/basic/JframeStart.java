@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 
 public class JframeStart extends KeyAdapter{
     Map map;
-    JFrame window = new JFrame("KrabaZing");
+    JFrame window = new JFrame("Kraba Zing");
     public JframeStart(){
         window.setSize(700, 1000);
         window.setResizable(false);

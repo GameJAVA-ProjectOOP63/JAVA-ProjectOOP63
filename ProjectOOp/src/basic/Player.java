@@ -19,21 +19,21 @@ public class Player {
     Map map;
     Enemy Enemy;
     RandEnemy RandEnemy;
-    public static int life = 3;
     private int x;
     private int y;
     //กำหนดความเร็ซในการเคลื่อนที่ของผู้เล่นตลอดการทำงาน
     private int speedx = 0;
     private int speedy = 0;
-
-    public Player(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
+    public static int life = 3;
     private LinkedList<Enemy> e = RandEnemy.getEnemyBounds();
 
     public Player() {
         map = new Map(0);
+    }
+
+    public Player(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     //เมธอดการเคลื่อนที่ของผู้เล่น จะทำงานตลอดเวลา
@@ -54,7 +54,6 @@ public class Player {
             y = 826;
         }
         hit();
-
     }
 
     //วาดตัวละครผู้เล่น
@@ -68,9 +67,8 @@ public class Player {
             g2d.drawImage(Image.life1, 550, 60, 45, 45, null);
             g2d.drawImage(Image.life2, 600, 65, 35, 35, null);
         } else if (life == 1) {
-            g2d.drawImage(Image.life1, 550, 60, 45, 45, null);
+            g2d.drawImage(Image.life1Red, 550, 60, 45, 45, null);
         }
-
     }
 
     //กดปุ้มค้างไว้
@@ -97,6 +95,7 @@ public class Player {
             speedy = 6;
             ;
         }
+        //เมื่อพลังชีวิตหมด
         if (life <= 0) {
             if (key == KeyEvent.VK_SPACE) {
                 game.score = 0;
@@ -108,7 +107,6 @@ public class Player {
                 this.y = 1000;
                 map.count_speed_map = 1;
                 RandEnemy.e.clear();
-
             }
         }
     }

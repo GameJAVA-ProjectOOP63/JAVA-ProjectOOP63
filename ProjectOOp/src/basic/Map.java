@@ -42,7 +42,7 @@ public class Map {
             if (count_speed_map < 30) {
                 count_speed_map += 0.5;
             }
-//            System.out.println("SP_MAP = " + count_speed_map);
+
         }
         if (Player.life > 0) {
             g2d.drawImage(Image.map, 0, y - 1000, 700, 2000, null);//วาดmap

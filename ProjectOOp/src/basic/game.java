@@ -35,7 +35,6 @@ public class game extends JPanel implements ActionListener {
     public static int score = 0;
 
     public game() {
-
         rand = new RandEnemy();
         loop = new Timer(10, this);
         loop.start();
@@ -45,7 +44,6 @@ public class game extends JPanel implements ActionListener {
         image = new Image();
         Map = new Map(0);
         setFocusable(true);
-
     }
 
     public void addScore() {
@@ -58,7 +56,6 @@ public class game extends JPanel implements ActionListener {
     //การจัดการกราฟฟิคบนจอ
     @Override
     public void paint(Graphics g) {
-
         super.paint(g); //To change body of generated methods, choose Tools | Templates.
         Graphics2D g2d = (Graphics2D) g;
         Map.draw(g2d);//วาดmap
@@ -69,12 +66,17 @@ public class game extends JPanel implements ActionListener {
             g2d.setColor(Color.white);
             g2d.setFont(new Font("TimesRoman", Font.PLAIN, 30));
             g2d.drawString("score " + score, 542, 50);
-        } else {
+        } else {//พลังชีวิตหมด
             g2d.setColor(Color.white);
             g2d.setFont(new Font("TimesRoman", Font.PLAIN, 70));
             g2d.drawString("Game Over", (width / 2) - 190, (height - 50) / 2);
             g2d.setFont(new Font("TimesRoman", Font.PLAIN, 50));
             g2d.drawString("Your Score " + score, (width / 2) - 150, (height + 60) / 2);
+            g2d.setFont(new Font("TimesRoman", Font.PLAIN, 20));
+            g2d.drawString("Press spacebar to try again.", (width - 470), (height -200));
+            g2d.drawImage(Image.life1Red, 550, 60, 45, 45, null);
+            g2d.drawImage(Image.life2Red, 600, 65, 35, 35, null);
+            g2d.drawImage(Image.life3Red, 640, 65, 35, 35, null);
         }
     }
 
@@ -85,5 +87,4 @@ public class game extends JPanel implements ActionListener {
         addScore();
         repaint();
     }
-
 }

@@ -19,10 +19,16 @@ public class RandEnemy {
     private int Probability = 1200;
     static LinkedList<Enemy> e = new LinkedList<>();
     public static int s;
+    
+    //กันการสุ่มเคสเดียวกันติดกัน
     int stop2car;
 
     public RandEnemy() {
         s = e.size();
+    }
+
+    public static LinkedList<Enemy> getEnemyBounds() {
+        return e;
     }
 
     //วาดenemyทีละหลายๆตัว
@@ -42,10 +48,6 @@ public class RandEnemy {
             e.add(enemy);
             System.out.println("enemy: " + e.size());
         }
-    }
-
-    public static LinkedList<Enemy> getEnemyBounds() {
-        return e;
     }
 
     //รับคำสั่งจาก Draw
