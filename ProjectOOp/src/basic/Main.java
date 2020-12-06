@@ -11,6 +11,6 @@ package basic;
  */
 public class Main {
     public static void main(String[] args) {
-        JframeStart k = new JframeStart();
+        Jframe k = new Jframe();
     }
 }
