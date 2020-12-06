@@ -36,7 +36,7 @@ public class RandEnemy {
 
     //ส่งมาจาก RandomEnemy
     public void addEnemy(Enemy enemy) {
-        if (e.size() < 15) {
+        if (e.size() < 50) {
             System.out.println("------------");
             System.out.println("add enemy ");
             e.add(enemy);

@@ -27,8 +27,8 @@ public class game extends JPanel implements ActionListener {
     RandEnemy rand;
     Image image;
     Map Map;
-    int width = 700;
-    int height = 1000;
+    static int  width = 700;
+    static int height = 1000;
     int count_score = 0;
     public static int score = 0;
 
@@ -61,7 +61,6 @@ public class game extends JPanel implements ActionListener {
         Graphics2D g2d = (Graphics2D) g;
         Map.draw(g2d);//วาดmap
         
-        Player.life = 0;
         if (Player.life > 0) {
             Player.draw(g2d);
             rand.draw(g2d);
@@ -71,7 +70,7 @@ public class game extends JPanel implements ActionListener {
         } else {
             g2d.setColor(Color.white);
             g2d.setFont(new Font("TimesRoman", Font.PLAIN, 70));
-            g2d.drawString("Game Over", (width / 2) - 200, (height-20) / 2);
+            g2d.drawString("Game Over", (width / 2) - 190, (height-50) / 2);
             g2d.setFont(new Font("TimesRoman", Font.PLAIN, 50));
             g2d.drawString("Your Score " + score, (width / 2) - 150, (height + 60) / 2);
 //            g2d.drawString("Your Score " + score + ".", (width / 2) - 150, (height + 90) / 2);

@@ -7,18 +7,26 @@ package basic;
 
 import static basic.Image.life1;
 import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.util.LinkedList;
+
 
 /**
  *
  * @author HP
  */
-public class Map {
-
+public class Map implements KeyListener{
+    
+    private LinkedList<Enemy> e = RandEnemy.getEnemyBounds();
     Player Player;
     private final int x = 0;
     private int y;
     private int speedy = 1;
     public static float count_speed_map = 1;
+    int width = 700;
+    int height = 1000;
+    
 
     //กำหนดความเร็ซในการเคลื่อนที่ของผู้เล่นตลอดการทำงาน
     public Map(int y) {
@@ -48,5 +56,28 @@ public class Map {
 
     public void update() {
 
+    }
+
+    @Override
+    public void keyTyped(KeyEvent ke) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void keyPressed(KeyEvent ke) {
+        int key = ke.getKeyCode();
+        if(Player.life == 0){
+            if (key == KeyEvent.VK_SPACE){
+                
+                Jframe k = new Jframe();
+        }
+
+        
+    }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent ke) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
