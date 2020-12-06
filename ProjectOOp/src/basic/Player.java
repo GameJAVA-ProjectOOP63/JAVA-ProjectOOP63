@@ -104,15 +104,13 @@ public class Player {
                 this.life = 3;
                 this.speedx = 0;
                 this.speedy = 0;
-                this.x = (700/2)- 35;
+                this.x = (700 / 2) - 35;
                 this.y = 1000;
                 map.count_speed_map = 1;
-                Enemy.e.clear();
-                
-                
+                RandEnemy.e.clear();
 
-}
-}
+            }
+        }
     }
 
     public void keyReleased(KeyEvent e) {
