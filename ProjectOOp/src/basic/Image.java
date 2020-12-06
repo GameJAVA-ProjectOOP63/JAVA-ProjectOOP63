@@ -27,7 +27,7 @@ public class Image {
             map = ImageIO.read(getClass().getResource("/Img/street.png"));
             carzing = ImageIO.read(getClass().getResource("/Img/carzing.png"));
             kraba = ImageIO.read(getClass().getResource("/Img/Kraba.png"));
-            life1 = ImageIO.read(getClass().getResource("/engine/Kraba.png"));
+            life1 = ImageIO.read(getClass().getResource("/Img/engine.png"));
 //            life2 = ImageIO.read(getClass().getResource("/shock/Kraba.png"));
 //            life3 = ImageIO.read(getClass().getResource("/wheel/Kraba.png"));
             
