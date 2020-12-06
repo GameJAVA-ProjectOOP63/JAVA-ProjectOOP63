@@ -107,7 +107,7 @@ public class Player {
                 this.x = (700/2)- 35;
                 this.y = 1000;
                 map.count_speed_map = 1;
-                Enemy.e.clear();
+                RandEnemy.e.clear();
                 
                 
 

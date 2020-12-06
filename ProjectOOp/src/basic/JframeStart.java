@@ -7,19 +7,19 @@ import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 
 public class JframeStart extends KeyAdapter{
-    JFrame window = new JFrame("Bobby Survival");
+    Map map;
+    JFrame window = new JFrame("KrabaZing");
     public JframeStart(){
-        
-        
-        window.setSize(1200, 800);
+        window.setSize(700, 1000);
         window.setResizable(false);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setLocationRelativeTo(null);
-        
+        window.add(new GameStart());
         window.setVisible(true);
         
         window.addKeyListener(this);
         window.setFocusable(true);
+        
     }
     
     @Override

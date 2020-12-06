@@ -25,6 +25,7 @@ public class Enemy implements ActionListener {
     private int speedy = 1;
     private int x,y = 0;
     LinkedList<Enemy> e = RandEnemy.getEnemyBounds();
+    
 
     public Enemy(int x, int y) {
         this.x = x;
@@ -42,13 +43,13 @@ public class Enemy implements ActionListener {
         y += 3;
         //ให้ enermy เพิ่มความเร็ว(ตำแหน่ง)
         if (g.score > 30) {
-            y += 5;
+            y += 3;
         }
         else if (g.score > 60) {
-            y += 10;
+            y += 5;
         }
         else if (g.score > 100) {
-            y += 15;
+            y += 11;
         }
         else if (g.score > 160) {
             y += 20;
