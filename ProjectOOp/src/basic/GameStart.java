@@ -1,0 +1,40 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package basic;
+
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JPanel;
+import javax.swing.Timer;
+
+/**
+ *
+ * @author HP
+ */
+public class GameStart extends JPanel implements ActionListener {
+    Timer loop;
+    Image image;
+    public GameStart(){
+        loop = new Timer(10, this);
+        loop.start();
+        image = new Image();
+        setFocusable(true);
+    }
+    
+    @Override
+    public void paint(Graphics g){
+        super.paint(g);
+        Graphics2D g2d = (Graphics2D)g;
+        g2d.drawImage(Image.Startgame, 0, 0,null);
+    }
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        
+    }
+    
+}

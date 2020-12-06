@@ -49,7 +49,7 @@ public class game extends JPanel implements ActionListener {
     }
 
     public void addScore() {
-        if (count_score % 100 == 0 && Player.life > 0) {
+        if (count_score % 75 == 0 && Player.life > 0) {
             score += 1;
 //            System.out.println(score);
         }

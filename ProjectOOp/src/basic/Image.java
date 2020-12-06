@@ -13,6 +13,7 @@ import javax.imageio.ImageIO;
  * @author HP
  */
 public class Image {
+    public static BufferedImage Startgame;
     public static BufferedImage map, map_end;
     public static BufferedImage carzing;
     public static BufferedImage kraba;
@@ -22,6 +23,7 @@ public class Image {
 
     public Image() {
         try {
+            Startgame = ImageIO.read(getClass().getResource("/Img/StartGame.png"));
             map = ImageIO.read(getClass().getResource("/Img/street.png"));
             map_end = ImageIO.read(getClass().getResource("/Img/street_end.png"));
             carzing = ImageIO.read(getClass().getResource("/Img/carzing.png"));
@@ -31,7 +33,6 @@ public class Image {
             life3 = ImageIO.read(getClass().getResource("/Img/wheel.png"));
 
         } catch (Exception ex) {
-            ex.printStackTrace();
         }
     }
 }
