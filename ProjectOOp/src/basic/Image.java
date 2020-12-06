@@ -13,24 +13,23 @@ import javax.imageio.ImageIO;
  * @author HP
  */
 public class Image {
-
-    public static BufferedImage map;
+    public static BufferedImage map, map_end;
     public static BufferedImage carzing;
     public static BufferedImage kraba;
     public static BufferedImage life1;
     public static BufferedImage life2;
     public static BufferedImage life3;
-    
-    public Image(){
-        try {
 
+    public Image() {
+        try {
             map = ImageIO.read(getClass().getResource("/Img/street.png"));
+            map_end = ImageIO.read(getClass().getResource("/Img/street_end.png"));
             carzing = ImageIO.read(getClass().getResource("/Img/carzing.png"));
             kraba = ImageIO.read(getClass().getResource("/Img/Kraba.png"));
             life1 = ImageIO.read(getClass().getResource("/Img/engine.png"));
-//            life2 = ImageIO.read(getClass().getResource("/shock/Kraba.png"));
-//            life3 = ImageIO.read(getClass().getResource("/wheel/Kraba.png"));
-            
+            life2 = ImageIO.read(getClass().getResource("/Img/shock.png"));
+            life3 = ImageIO.read(getClass().getResource("/Img/wheel.png"));
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }

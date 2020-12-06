@@ -14,6 +14,7 @@ import java.awt.Graphics2D;
  */
 public class Map {
 
+    Player Player;
     private final int x = 0;
     private int y;
     private int speedy = 1;
@@ -37,14 +38,12 @@ public class Map {
             }
 //            System.out.println("SP_MAP = " + count_speed_map);
         }
+        if (Player.life > 0) {
+            g2d.drawImage(Image.map, 0, y - 1000, 700, 2000, null);//วาดmap
+        } else {
+            g2d.drawImage(Image.map_end, 0, y - 1000, 700, 2000, null);//วาดmap
+        }
 
-//       for (int i = 0; i <  2; i++) {
-        g2d.drawImage(Image.map, 0, y - 1000, 700, 2000, null);//วาดmap
-//           System.out.println(count);
-
-//           System.out.println(i);
-//        }
-//        System.out.println(y);
     }
 
     public void update() {

@@ -20,7 +20,7 @@ public class Player {
     //กำหนดความเร็ซในการเคลื่อนที่ของผู้เล่นตลอดการทำงาน
     private int speedx = 0;
     private int speedy = 0;
-    
+
     public static int life = 3;
 
     public Player(int x, int y) {
@@ -57,8 +57,20 @@ public class Player {
     //วาดตัวละครผู้เล่น
     public void draw(Graphics2D g2d) {
         g2d.drawImage(Image.kraba, x, y, 70, 140, null);
-        g2d.drawImage(Image.life1, 540, 80, 50, 50, null);
-        
+        if (life == 3) {
+            g2d.drawImage(Image.life1, 550, 60, 45, 45, null);
+            g2d.drawImage(Image.life2, 600, 65, 35, 35, null);
+            g2d.drawImage(Image.life3, 640, 65, 35, 35, null);
+        } else if (life == 2) {
+            g2d.drawImage(Image.life1, 550, 60, 45, 45, null);
+            g2d.drawImage(Image.life2, 600, 65, 35, 35, null);
+        } else if (life == 1) {
+            g2d.drawImage(Image.life1, 550, 60, 45, 45, null);
+        } else if (life == 0) {
+
+        }
+        //รอใส่หน้าจบเกม
+
     }
 
     //กดปุ้มค้างไว้
@@ -111,22 +123,12 @@ public class Player {
     //เช็คการชนPlayerกับEnemy
     public void hit() {
         for (int i = 0; i < e.size(); i++) {
-            if (getBounds().intersects(e.get(i).getBounds())) { 
+            if (getBounds().intersects(e.get(i).getBounds())) {
                 System.out.println("------------");
                 System.out.println("remove enemy");
                 e.remove(i);
                 System.out.println("evemy: " + e.size());
-                
                 life -= 1;
-                if(life == 2){
-                    
-                }
-                else if(life == 1){
-                    
-                }
-                else if(life == 0){
-                    
-                }
             }
         }
     }

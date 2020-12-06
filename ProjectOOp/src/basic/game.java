@@ -31,13 +31,13 @@ public class game extends JPanel implements ActionListener {
     int height = 1000;
     int count_score = 0;
     public static int score = 0;
-    
+
     public game() {
 
         rand = new RandEnemy();
         loop = new Timer(10, this);
         loop.start();
-        Player = new Player((width / 2)-35, height);
+        Player = new Player((width / 2) - 35, height);
         Enemy = new Enemy(350, 200);
         addKeyListener(new Keyinput(Player));
         image = new Image();
@@ -45,8 +45,9 @@ public class game extends JPanel implements ActionListener {
         setFocusable(true);
 
     }
-    public void addScore(){
-        if (count_score % 100 == 0){
+
+    public void addScore() {
+        if (count_score % 100 == 0 && Player.life > 0) {
             score += 1;
 //            System.out.println(score);
         }
@@ -55,22 +56,32 @@ public class game extends JPanel implements ActionListener {
     //การจัดการกราฟฟิคบนจอ
     @Override
     public void paint(Graphics g) {
+
         super.paint(g); //To change body of generated methods, choose Tools | Templates.
         Graphics2D g2d = (Graphics2D) g;
         Map.draw(g2d);//วาดmap
-        Player.draw(g2d);
-        rand.draw(g2d);
-        g2d.setColor(Color.white);
-        g2d.setFont(new Font("TimesRoman", Font.PLAIN, 30)); 
-        g2d.drawString("Score : " + score, 540, 50);
         
+        Player.life = 0;
+        if (Player.life > 0) {
+            Player.draw(g2d);
+            rand.draw(g2d);
+            g2d.setColor(Color.white);
+            g2d.setFont(new Font("TimesRoman", Font.PLAIN, 30));
+            g2d.drawString("Score : " + score, 540, 50);
+        } else {
+            g2d.setColor(Color.white);
+            g2d.setFont(new Font("TimesRoman", Font.PLAIN, 70));
+            g2d.drawString("Game Over", (width / 2) - 200, (height-20) / 2);
+            g2d.setFont(new Font("TimesRoman", Font.PLAIN, 50));
+            g2d.drawString("Your Score " + score, (width / 2) - 150, (height + 60) / 2);
+//            g2d.drawString("Your Score " + score + ".", (width / 2) - 150, (height + 90) / 2);
+        }
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
         Player.update();
         count_score++;
-//        System.out.println("Print count_score : "+ count_score);
         addScore();
         repaint();
     }
