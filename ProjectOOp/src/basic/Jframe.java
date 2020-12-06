@@ -22,7 +22,6 @@ public class Jframe extends JFrame {
         window.setLocationRelativeTo(null);
         
         window.setLayout(new BorderLayout());
-//        window.add(new Status_Right(),BorderLayout.EAST);
         window.add(new game(),BorderLayout.CENTER);
         
         window.setVisible(true);
