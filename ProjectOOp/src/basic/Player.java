@@ -57,7 +57,7 @@ public class Player {
     //วาดตัวละครผู้เล่น
     public void draw(Graphics2D g2d) {
         g2d.drawImage(Image.kraba, x, y, 70, 140, null);
-//        g2d.drawImage(Image.kraba, x, y, 70, 140, null);
+        g2d.drawImage(Image.life1, 540, 80, 50, 50, null);
         
     }
 
