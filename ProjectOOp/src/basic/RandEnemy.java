@@ -85,7 +85,7 @@ public class RandEnemy {
             stop2car = 900;
             System.out.println(num);
         } //for score > 30
-        else if (g.score >= 30) {
+        if (g.score >= 30) {
             if (num == 50 && stop2car != 50) {
                 addEnemy(new Enemy(168, -220));
                 stop2car = 50;
@@ -125,6 +125,49 @@ public class RandEnemy {
             } else if (num == 750 && stop2car != 750) {
                 addEnemy(new Enemy(268, -270));
                 stop2car = 750;
+                System.out.println(num);
+            }
+        }
+        if (g.score >= 100) {
+            if (num == 25 && stop2car != 25) {
+                addEnemy(new Enemy(168, -220));
+                stop2car = 25;
+                System.out.println(num);
+            } else if (num == 125 && stop2car != 125) {
+                addEnemy(new Enemy(268, -220));
+                stop2car = 125;
+                System.out.println(num);
+            } else if (num == 225 && stop2car != 225) {
+                addEnemy(new Enemy(368, -220));
+                stop2car = 225;
+                System.out.println(num);
+            } else if (num == 425 && stop2car != 425) {
+                addEnemy(new Enemy(450, -220));
+                stop2car = 425;
+                System.out.println(num);
+            } else if (num == 825 && stop2car != 825) {
+                addEnemy(new Enemy(368, -220));
+                stop2car = 825;
+                System.out.println(num);
+            } else if (num == 325 && stop2car != 325) {
+                addEnemy(new Enemy(168, -270));
+                stop2car = 325;
+                System.out.println(num);
+            } else if (num == 425 && stop2car != 425) {
+                addEnemy(new Enemy(268, -270));
+                stop2car = 425;
+                System.out.println(num);
+            } else if (num == 525 && stop2car != 525) {
+                addEnemy(new Enemy(368, -270));
+                stop2car = 525;
+                System.out.println(num);
+            } else if (num == 625 && stop2car != 625) {
+                addEnemy(new Enemy(450, -270));
+                stop2car = 625;
+                System.out.println(num);
+            } else if (num == 725 && stop2car != 725) {
+                addEnemy(new Enemy(268, -270));
+                stop2car = 725;
                 System.out.println(num);
             }
         }
