@@ -73,7 +73,7 @@ public class Enemy implements ActionListener {
     }
     //กำหนดhitbox
     public Rectangle getBounds() {
-        return new Rectangle(x, y, 84, 170);
+        return new Rectangle(x, y+30, 84, 135);
     }
 
     @Override
