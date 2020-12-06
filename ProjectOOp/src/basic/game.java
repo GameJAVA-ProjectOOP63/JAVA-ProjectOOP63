@@ -57,8 +57,6 @@ public class game extends JPanel implements ActionListener {
     public void paint(Graphics g) {
         super.paint(g); //To change body of generated methods, choose Tools | Templates.
         Graphics2D g2d = (Graphics2D) g;
-//        g2d.setColor(Color.yellow);
-//        g2d.fillRect(0, 0, MainClass.WIDTH, MainClass.HEIGHT);
         Map.draw(g2d);//วาดmap
         Player.draw(g2d);
         rand.draw(g2d);
@@ -71,8 +69,8 @@ public class game extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
         Player.update();
-   
         count_score++;
+//        System.out.println("Print count_score : "+ count_score);
         addScore();
         repaint();
     }

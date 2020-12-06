@@ -30,7 +30,7 @@ public class Enemy implements ActionListener {
     public Enemy(int x, int y) {
         this.x = x;
         this.y = y;
-        loop = new Timer(100, (ActionListener) this);
+        loop = new Timer(1, (ActionListener) this);
         loop.start();
     }
 
@@ -41,7 +41,7 @@ public class Enemy implements ActionListener {
     public void draw(Graphics2D g2d) {
         g2d.drawImage(Image.carzing, x, y, 84, 170, null);
         y += 3;
-        //ให้ enermy เพิ่มความเร็วตามเวลาและความเร็ว
+        //ให้ enermy เพิ่มความเร็ว(ตำแหน่ง)
         if (g.score > 30) {
             y += 5;
         }
@@ -57,8 +57,9 @@ public class Enemy implements ActionListener {
         else if (g.score > 220) {
             y += 100;
         }
-        System.out.println("score " + g.score);
+//        System.out.println("score " + g.score);
 //        System.out.println(y + " y");
+        //หากเกินหน้าจอ เอาออกจาก list
         if (y > 1000) {
             System.out.println("------------");
             System.out.println("remove enemy");
