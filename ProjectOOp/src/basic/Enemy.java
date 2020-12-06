@@ -23,7 +23,6 @@ public class Enemy implements ActionListener {
     Timer loop;
     game g;
     private int speedy = 1;
-    public float count = 1;
     private int x,y = 0;
     LinkedList<Enemy> e = RandEnemy.getEnemyBounds();
 
@@ -87,14 +86,6 @@ public class Enemy implements ActionListener {
 
     public void setSpeedy(int speedy) {
         this.speedy = speedy;
-    }
-
-    public float getCount() {
-        return count;
-    }
-
-    public void setCount(float count) {
-        this.count = count;
     }
 
     public int getX() {

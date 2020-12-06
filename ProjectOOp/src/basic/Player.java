@@ -106,15 +106,9 @@ public class Player {
                 this.speedy = 0;
                 this.x = (700/2)- 35;
                 this.y = 1000;
-                Enemy.setSpeedy(1);
-                Enemy.setCount(1);
-                Enemy.setX(0);
-                Enemy.setY(0);
+                map.count_speed_map = 1;
                 Enemy.e.clear();
-                Enemy = new Enemy(350, 200);
-                RandEnemy.stop2car = 0;
-                RandEnemy.s = 0;
-                Jframe jframe = new Jframe();
+                
                 
 
 }
