@@ -16,12 +16,9 @@ import javax.swing.Timer;
  *
  * @author HP
  */
-public class GameStart extends JPanel implements ActionListener {
-    Timer loop;
+public class GameStart extends JPanel  {
     Image image;
     public GameStart(){
-        loop = new Timer(10, this);
-        loop.start();
         image = new Image();
         setFocusable(true);
     }
@@ -31,10 +28,6 @@ public class GameStart extends JPanel implements ActionListener {
         super.paint(g);
         Graphics2D g2d = (Graphics2D)g;
         g2d.drawImage(Image.Startgame, 0, 0,null);
-    }
-    @Override
-    public void actionPerformed(ActionEvent ae) {
-        
     }
     
 }

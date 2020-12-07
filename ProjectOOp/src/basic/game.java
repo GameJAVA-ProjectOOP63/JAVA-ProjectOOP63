@@ -69,11 +69,11 @@ public class game extends JPanel implements ActionListener {
         } else {//พลังชีวิตหมด
             g2d.setColor(Color.white);
             g2d.setFont(new Font("TimesRoman", Font.PLAIN, 70));
-            g2d.drawString("Game Over", (width / 2) - 190, (height - 50) / 2);
+            g2d.drawString("Game Over", (width / 2) - 180, (height - 50) / 2);
             g2d.setFont(new Font("TimesRoman", Font.PLAIN, 50));
             g2d.drawString("Your Score " + score, (width / 2) - 150, (height + 60) / 2);
             g2d.setFont(new Font("TimesRoman", Font.PLAIN, 20));
-            g2d.drawString("Press SPACEBAR to try again.", (width - 470), (height -200));
+            g2d.drawString("Press SPACEBAR to try again.", (width - 485), (height -200));
             g2d.drawImage(Image.life1Red, 550, 60, 45, 45, null);
             g2d.drawImage(Image.life2Red, 600, 65, 35, 35, null);
             g2d.drawImage(Image.life3Red, 640, 65, 35, 35, null);
