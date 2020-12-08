@@ -21,12 +21,11 @@ public class Game extends JPanel implements ActionListener {
     Map Map;
     Game game;
     SoundPlay1 sound1;
-    SoundPlay2 sound2;
+    SoundPlay2 sound2, sound3;
     static int width = 700;
     static int height = 1000;
     public static int count_score = 0;
     public static int score = 0;
-    private int num = 0;
 
     public Game() {
         rand = new RandEnemy();
@@ -87,6 +86,7 @@ public class Game extends JPanel implements ActionListener {
                 loop2 = new Timer(1000, (ActionListener) sound2);
                 loop2.start();
                 sound2 = new SoundPlay2("/Music/gameover.wav");
+                sound3 = new SoundPlay2("/Music/dead.wav");
             }
         }
     }
