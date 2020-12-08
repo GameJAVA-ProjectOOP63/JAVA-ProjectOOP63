@@ -1,19 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basic;
+
 import java.awt.BorderLayout;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 
-/**
- *
- * @author HP
- */
 public class Jframe extends JFrame {
     Player Player;
     public Jframe(){
@@ -29,5 +21,4 @@ public class Jframe extends JFrame {
         
         window.setVisible(true);
     }
-
 }

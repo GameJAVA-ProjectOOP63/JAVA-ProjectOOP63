@@ -16,7 +16,7 @@ public class SoundPlay2 {
             clip.open(sound);
             clip.setFramePosition(0);
             FloatControl gaiControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-            double gain = 0.1;
+            double gain = 0.25;
             float dB = (float) (Math.log(gain) / Math.log(10.0) * 20.0);
             gaiControl.setValue(dB);
             clip.start();

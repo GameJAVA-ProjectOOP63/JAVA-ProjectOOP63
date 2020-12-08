@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basic;
 
 //ออกแบบ Player
@@ -18,7 +13,7 @@ public class Player {
     Map map;
     Enemy Enemy;
     RandEnemy RandEnemy;
-    SoundPlay1 sound;
+    SoundPlay2 sound1;
     public static boolean soundon;
     private int x;
     private int y;
@@ -130,6 +125,7 @@ public class Player {
             if (getBounds().intersects(e.get(i).getBounds())) {
                 e.remove(i);
                 life -= 1;
+                sound1 = new SoundPlay2("/Music/bomb.wav");
                 if (life > 0){
                     System.out.println("Crash !!!");
                 } else if (life == 0){

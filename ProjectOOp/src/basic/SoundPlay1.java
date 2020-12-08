@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basic;
 
 import javax.sound.sampled.*;
@@ -10,10 +5,6 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Bank Jirayuth
- */
 public class SoundPlay1 {
 
     public Clip clip;
@@ -25,7 +16,7 @@ public class SoundPlay1 {
             clip.open(sound);
             clip.setFramePosition(0);
             FloatControl gaiControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-            double gain = 0.05;
+            double gain = 0.03;
             float dB = (float) (Math.log(gain) / Math.log(10.0) * 20.0);
             gaiControl.setValue(dB);
             clip.start();

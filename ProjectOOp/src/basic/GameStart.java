@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basic;
 
 import java.awt.Graphics;
@@ -12,10 +7,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-/**
- *
- * @author HP
- */
 public class GameStart extends JPanel  {
     Image image;
     public GameStart(){
@@ -30,5 +21,4 @@ public class GameStart extends JPanel  {
         Graphics2D g2d = (Graphics2D)g;
         g2d.drawImage(Image.Startgame, 0, 0,null);
     }
-    
 }

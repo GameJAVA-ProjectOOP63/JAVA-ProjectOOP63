@@ -1,17 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basic;
 
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 
-/**
- *
- * @author HP
- */
 public class Image {
     public static BufferedImage Startgame;
     public static BufferedImage map, map_end;
@@ -34,7 +25,6 @@ public class Image {
             life1Red = ImageIO.read(getClass().getResource("/Img/engine_red.png"));
             life2Red = ImageIO.read(getClass().getResource("/Img/shock_red.png"));
             life3Red = ImageIO.read(getClass().getResource("/Img/wheel_red.png"));
-
         } catch (Exception ex) {
             ex.printStackTrace();
         }
