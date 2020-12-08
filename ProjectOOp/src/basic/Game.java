@@ -13,6 +13,7 @@ import javax.swing.*;
 
 //วาดกราฟฟริกลงบนจอ
 public class Game extends JPanel implements ActionListener {
+
     Timer loop, loop1, loop2;
     Player Player;
     Enemy Enemy;
@@ -21,7 +22,8 @@ public class Game extends JPanel implements ActionListener {
     Map Map;
     Game game;
     SoundPlay1 sound1;
-    SoundPlay2 sound2, sound3;
+    SoundPlay2 sound2;
+    SoundPlay3 sound3;
     static int width = 700;
     static int height = 1000;
     public static int count_score = 0;
@@ -58,12 +60,12 @@ public class Game extends JPanel implements ActionListener {
             g2d.setColor(Color.white);
             g2d.setFont(new Font("TimesRoman", Font.PLAIN, 30));
             g2d.drawString("score " + score, 542, 50);
-            if (sound1 == null){
+            if (sound1 == null) {
                 loop1 = new Timer(1000, (ActionListener) sound1);
                 loop1.start();
                 sound1 = new SoundPlay1("/Music/background.wav");
             }
-            if (sound2 != null){
+            if (sound2 != null) {
                 sound2.clip.stop();
                 sound2 = null;
             }
@@ -78,15 +80,15 @@ public class Game extends JPanel implements ActionListener {
             g2d.drawImage(Image.life1Red, 550, 60, 45, 45, null);
             g2d.drawImage(Image.life2Red, 600, 65, 35, 35, null);
             g2d.drawImage(Image.life3Red, 640, 65, 35, 35, null);
-            if (sound1 != null){
+            if (sound1 != null) {
                 sound1.clip.stop();
                 sound1 = null;
             }
-            if (sound2 == null){
+            if (sound2 == null) {
                 loop2 = new Timer(1000, (ActionListener) sound2);
                 loop2.start();
                 sound2 = new SoundPlay2("/Music/gameover.wav");
-                sound3 = new SoundPlay2("/Music/dead.wav");
+                sound3 = new SoundPlay3("/Music/dead.wav");
             }
         }
     }
