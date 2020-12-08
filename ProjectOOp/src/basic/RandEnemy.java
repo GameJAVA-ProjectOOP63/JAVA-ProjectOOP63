@@ -146,30 +146,6 @@ public class RandEnemy {
                 addEnemy(new Enemy(450, -220));
                 stop2car = 425;
                 System.out.println(num);
-            } else if (num == 825 && stop2car != 825) {
-                addEnemy(new Enemy(368, -220));
-                stop2car = 825;
-                System.out.println(num);
-            } else if (num == 325 && stop2car != 325) {
-                addEnemy(new Enemy(168, -270));
-                stop2car = 325;
-                System.out.println(num);
-            } else if (num == 425 && stop2car != 425) {
-                addEnemy(new Enemy(268, -270));
-                stop2car = 425;
-                System.out.println(num);
-            } else if (num == 525 && stop2car != 525) {
-                addEnemy(new Enemy(368, -270));
-                stop2car = 525;
-                System.out.println(num);
-            } else if (num == 625 && stop2car != 625) {
-                addEnemy(new Enemy(450, -270));
-                stop2car = 625;
-                System.out.println(num);
-            } else if (num == 725 && stop2car != 725) {
-                addEnemy(new Enemy(268, -270));
-                stop2car = 725;
-                System.out.println(num);
             }
         }
     }
