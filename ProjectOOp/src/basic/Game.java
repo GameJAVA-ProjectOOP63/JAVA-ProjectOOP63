@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package basic;
 
 import java.awt.Color;
@@ -16,47 +11,24 @@ import java.awt.event.KeyListener;
 import java.util.Random;
 import javax.swing.*;
 
-/**
- *
- * @author HP
- */
 //วาดกราฟฟริกลงบนจอ
 public class Game extends JPanel implements ActionListener {
-
-    Timer loop;
+    Timer loop, loop1, loop2;
     Player Player;
     Enemy Enemy;
     RandEnemy rand;
     Image image;
     Map Map;
-    SoundPlay sound1, sound2 = null;
+    Game game;
+    SoundPlay1 sound1;
+    SoundPlay2 sound2;
     static int width = 700;
     static int height = 1000;
     public static int count_score = 0;
     public static int score = 0;
-    public static int num = 0;
-
-//    public void setNum() {
-//        if (num == 0) {
-//            num = 1;
-//        } else if (num == 1) {
-//            num = 0;
-//        }
-//    }
+    private int num = 0;
 
     public Game() {
-
-//        if (num == 0 && sound2 == null) {
-            sound1 = new SoundPlay("/Music/BG.wav");
-//            
-//        }else if (num == 0 && sound2 != null){
-//            sound2.clip.stop();
-//            sound1 = new SoundPlay("/Music/BG.wav");
-//        }
-//        else if (num == 1) {
-//            sound1.clip.stop();
-//            sound2 = new SoundPlay("/Music/BG.wav");
-//        }
         rand = new RandEnemy();
         loop = new Timer(10, this);
         loop.start();
@@ -82,14 +54,21 @@ public class Game extends JPanel implements ActionListener {
         Map.draw(g2d);//วาดmap
 
         if (Player.life > 0) {
-
             Player.draw(g2d);
             rand.draw(g2d);
             g2d.setColor(Color.white);
             g2d.setFont(new Font("TimesRoman", Font.PLAIN, 30));
             g2d.drawString("score " + score, 542, 50);
+            if (sound1 == null){
+                loop1 = new Timer(1000, (ActionListener) sound1);
+                loop1.start();
+                sound1 = new SoundPlay1("/Music/background.wav");
+            }
+            if (sound2 != null){
+                sound2.clip.stop();
+                sound2 = null;
+            }
         } else {//พลังชีวิตหมด
-
             g2d.setColor(Color.white);
             g2d.setFont(new Font("TimesRoman", Font.PLAIN, 70));
             g2d.drawString("Game Over", (width / 2) - 180, (height - 50) / 2);
@@ -100,6 +79,15 @@ public class Game extends JPanel implements ActionListener {
             g2d.drawImage(Image.life1Red, 550, 60, 45, 45, null);
             g2d.drawImage(Image.life2Red, 600, 65, 35, 35, null);
             g2d.drawImage(Image.life3Red, 640, 65, 35, 35, null);
+            if (sound1 != null){
+                sound1.clip.stop();
+                sound1 = null;
+            }
+            if (sound2 == null){
+                loop2 = new Timer(1000, (ActionListener) sound2);
+                loop2.start();
+                sound2 = new SoundPlay2("/Music/gameover.wav");
+            }
         }
     }
 

@@ -14,12 +14,11 @@ import java.util.LinkedList;
 import javax.swing.JFrame;
 
 public class Player {
-
     Game game;
     Map map;
     Enemy Enemy;
     RandEnemy RandEnemy;
-    SoundPlay sound;
+    SoundPlay1 sound;
     public static boolean soundon;
     private int x;
     private int y;
@@ -28,7 +27,7 @@ public class Player {
     private int speedy = 0;
     public static int life = 3;
     private LinkedList<Enemy> e = RandEnemy.getEnemyBounds();
-
+    
     public Player() {
         map = new Map(0);
     }
@@ -90,10 +89,7 @@ public class Player {
         }
         //เมื่อพลังชีวิตหมด
         if (life <= 0) {
-//            game.setNum();
-            sound.clip.stop();
             if (key == KeyEvent.VK_SPACE) {
-//                game.setNum();
                 game.score = 0;
                 game.count_score = 0;
                 this.life = 3;
@@ -134,6 +130,11 @@ public class Player {
             if (getBounds().intersects(e.get(i).getBounds())) {
                 e.remove(i);
                 life -= 1;
+                if (life > 0){
+                    System.out.println("Crash !!!");
+                } else if (life == 0){
+                    System.out.println("You are dead.");
+                }
             }
         }
     }
