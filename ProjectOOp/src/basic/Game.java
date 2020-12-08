@@ -21,7 +21,7 @@ import javax.swing.*;
  * @author HP
  */
 //วาดกราฟฟริกลงบนจอ
-public class game extends JPanel implements ActionListener {
+public class Game extends JPanel implements ActionListener {
 
     Timer loop;
     Player Player;
@@ -29,12 +29,34 @@ public class game extends JPanel implements ActionListener {
     RandEnemy rand;
     Image image;
     Map Map;
+    SoundPlay sound1, sound2 = null;
     static int width = 700;
     static int height = 1000;
     public static int count_score = 0;
     public static int score = 0;
+    public static int num = 0;
 
-    public game() {
+//    public void setNum() {
+//        if (num == 0) {
+//            num = 1;
+//        } else if (num == 1) {
+//            num = 0;
+//        }
+//    }
+
+    public Game() {
+
+//        if (num == 0 && sound2 == null) {
+            sound1 = new SoundPlay("/Music/BG.wav");
+//            
+//        }else if (num == 0 && sound2 != null){
+//            sound2.clip.stop();
+//            sound1 = new SoundPlay("/Music/BG.wav");
+//        }
+//        else if (num == 1) {
+//            sound1.clip.stop();
+//            sound2 = new SoundPlay("/Music/BG.wav");
+//        }
         rand = new RandEnemy();
         loop = new Timer(10, this);
         loop.start();
@@ -60,12 +82,14 @@ public class game extends JPanel implements ActionListener {
         Map.draw(g2d);//วาดmap
 
         if (Player.life > 0) {
+
             Player.draw(g2d);
             rand.draw(g2d);
             g2d.setColor(Color.white);
             g2d.setFont(new Font("TimesRoman", Font.PLAIN, 30));
             g2d.drawString("score " + score, 542, 50);
         } else {//พลังชีวิตหมด
+
             g2d.setColor(Color.white);
             g2d.setFont(new Font("TimesRoman", Font.PLAIN, 70));
             g2d.drawString("Game Over", (width / 2) - 180, (height - 50) / 2);

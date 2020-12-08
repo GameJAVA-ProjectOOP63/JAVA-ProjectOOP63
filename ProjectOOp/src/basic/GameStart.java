@@ -21,6 +21,7 @@ public class GameStart extends JPanel  {
     public GameStart(){
         image = new Image();
         setFocusable(true);
+        
     }
     
     @Override

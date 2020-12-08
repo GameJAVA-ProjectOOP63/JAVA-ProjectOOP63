@@ -15,10 +15,12 @@ import javax.swing.JFrame;
 
 public class Player {
 
-    game game;
+    Game game;
     Map map;
     Enemy Enemy;
     RandEnemy RandEnemy;
+    SoundPlay sound;
+    public static boolean soundon;
     private int x;
     private int y;
     //กำหนดความเร็ซในการเคลื่อนที่ของผู้เล่นตลอดการทำงาน
@@ -88,7 +90,10 @@ public class Player {
         }
         //เมื่อพลังชีวิตหมด
         if (life <= 0) {
+//            game.setNum();
+            sound.clip.stop();
             if (key == KeyEvent.VK_SPACE) {
+//                game.setNum();
                 game.score = 0;
                 game.count_score = 0;
                 this.life = 3;

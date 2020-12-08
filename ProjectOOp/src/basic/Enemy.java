@@ -21,7 +21,7 @@ import javax.swing.Timer;
  */
 public class Enemy {
 
-    game g;
+    Game g;
     Timer loop;
     private int speedy = 1;
     private int x, y = 0;

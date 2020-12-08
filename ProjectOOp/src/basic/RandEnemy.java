@@ -14,7 +14,7 @@ import java.util.LinkedList;
  */
 public class RandEnemy {
 
-    game g;
+    Game g;
     Enemy enemy;
     private int Probability = 1200;
     public static int s;
