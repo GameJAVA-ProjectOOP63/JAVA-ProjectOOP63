@@ -17,8 +17,8 @@ public class RandEnemy {
     game g;
     Enemy enemy;
     private int Probability = 1200;
-    static LinkedList<Enemy> e = new LinkedList<>();
     public static int s;
+    static LinkedList<Enemy> e = new LinkedList<>();
     
     //กันการสุ่มเคสเดียวกันติดกัน
     int stop2car;
@@ -53,7 +53,6 @@ public class RandEnemy {
     //รับคำสั่งจาก Draw
     private void RandomEnemy() {
         int num = (int) Math.floor(Math.random() * Probability);
-//        System.out.println(num);
         if (num == 0 && stop2car != 0) {
             addEnemy(new Enemy(168, -170));
             stop2car = 0;

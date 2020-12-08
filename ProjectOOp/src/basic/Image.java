@@ -36,6 +36,7 @@ public class Image {
             life3Red = ImageIO.read(getClass().getResource("/Img/wheel_red.png"));
 
         } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
 }

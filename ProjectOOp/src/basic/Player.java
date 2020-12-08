@@ -76,24 +76,15 @@ public class Player {
         int key = e.getKeyCode();
         if (key == KeyEvent.VK_RIGHT) {
             speedx = 6;
-//            System.out.println(x);
-//            System.out.println(y);
         }
         if (key == KeyEvent.VK_LEFT) {
             speedx = -6;
-//            System.out.println(x);
-//            System.out.println(y);
         }
         if (key == KeyEvent.VK_UP) {
             speedy = -6;
-//            System.out.println(x);
-//            System.out.println(y);
         }
         if (key == KeyEvent.VK_DOWN) {
-//            System.out.println(x);
-//            System.out.println(y);
             speedy = 6;
-            ;
         }
         //เมื่อพลังชีวิตหมด
         if (life <= 0) {
@@ -136,13 +127,9 @@ public class Player {
     public void hit() {
         for (int i = 0; i < e.size(); i++) {
             if (getBounds().intersects(e.get(i).getBounds())) {
-                System.out.println("------------");
-                System.out.println("remove enemy");
                 e.remove(i);
-                System.out.println("enemy: " + e.size());
                 life -= 1;
             }
         }
     }
-
 }

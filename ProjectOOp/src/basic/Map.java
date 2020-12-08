@@ -16,7 +16,7 @@ import java.util.LinkedList;
  * @author HP
  */
 public class Map {
-    
+
     Player Player;
     private LinkedList<Enemy> e = RandEnemy.getEnemyBounds();
     private final int x = 0;
@@ -42,17 +42,12 @@ public class Map {
             if (count_speed_map < 30) {
                 count_speed_map += 0.5;
             }
-
         }
         if (Player.life > 0) {
             g2d.drawImage(Image.map, 0, y - 1000, 700, 2000, null);//วาดmap
         } else {
             g2d.drawImage(Image.map_end, 0, y - 1000, 700, 2000, null);//วาดmap
         }
-
-    }
-
-    public void update() {
 
     }
 }

@@ -19,7 +19,6 @@ public class JframeStart extends KeyAdapter{
         
         window.addKeyListener(this);
         window.setFocusable(true);
-        
     }
     
     @Override
