@@ -125,10 +125,9 @@ public class Player {
             if (getBounds().intersects(e.get(i).getBounds())) {
                 e.remove(i);
                 life -= 1;
+                System.out.println("Crash !!!");
                 sound1 = new SoundPlay2("/Music/bomb.wav");
-                if (life > 0){
-                    System.out.println("Crash !!!");
-                } else if (life == 0){
+                if (life == 0){
                     System.out.println("You are dead.");
                 }
             }
