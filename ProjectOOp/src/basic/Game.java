@@ -67,6 +67,7 @@ public class Game extends JPanel implements ActionListener {
             }
             if (sound2 != null) {
                 sound2.clip.stop();
+                sound3.clip.stop();
                 sound2 = null;
             }
         } else {//พลังชีวิตหมด

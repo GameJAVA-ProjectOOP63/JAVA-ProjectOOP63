@@ -9,11 +9,13 @@ import java.util.LinkedList;
 import javax.swing.JFrame;
 
 public class Player {
+
     Game game;
     Map map;
     Enemy Enemy;
     RandEnemy RandEnemy;
-    SoundPlay2 sound1;
+    SoundPlay3 sound3;
+    SoundPlay2 sound2;
     public static boolean soundon;
     private int x;
     private int y;
@@ -22,7 +24,7 @@ public class Player {
     private int speedy = 0;
     public static int life = 3;
     private LinkedList<Enemy> e = RandEnemy.getEnemyBounds();
-    
+
     public Player() {
         map = new Map(0);
     }
@@ -70,6 +72,14 @@ public class Player {
     //กดปุ้มค้างไว้
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
+        if (life > 0) {
+            if (key == KeyEvent.VK_X) {
+                sound3 = new SoundPlay3("/Music/burn2.wav");
+            }
+            if (key == KeyEvent.VK_SPACE) {
+                sound3 = new SoundPlay3("/Music/horn.wav");
+            }
+        }
         if (key == KeyEvent.VK_RIGHT) {
             speedx = 6;
         }
@@ -85,6 +95,7 @@ public class Player {
         //เมื่อพลังชีวิตหมด
         if (life <= 0) {
             if (key == KeyEvent.VK_SPACE) {
+                sound2 = new SoundPlay2("/Music/enter.wav");
                 game.score = 0;
                 game.count_score = 0;
                 this.life = 3;
@@ -126,8 +137,8 @@ public class Player {
                 e.remove(i);
                 life -= 1;
                 System.out.println("Crash !!!");
-                sound1 = new SoundPlay2("/Music/bomb.wav");
-                if (life == 0){
+                sound2 = new SoundPlay2("/Music/bomb.wav");
+                if (life == 0) {
                     System.out.println("You are dead.");
                 }
             }
